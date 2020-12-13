@@ -17,13 +17,18 @@ const GlobalStyles = createGlobalStyle`
     color: var(--text-color);
     --landing-bg: linear-gradient(145deg,#001099 0,#3ad9ff 96%);
     --text-color:  #2e2e2e;
+    --text-color-opposite: #F3F4F5;
+    --link-border: #2e2e2e;
+
     //Sets opacity for dark mode items
     --dark-item: 0;
   }
   body.dark {
-    --landing-bg: black;
+    --landing-bg: rgba(0,0,0,0);
     --text-color: #F3F4F5;
+    --text-color-opposite:  #2e2e2e;
     --dark-item: 1;
+    --link-border: #43b7ff;
   }
 
 
