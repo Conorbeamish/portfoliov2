@@ -19,10 +19,12 @@ module.exports = {
         token: process.env.SANITY_TOKEN
       },
     },
+    
     "gatsby-plugin-styled-components",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
+    "gatsby-plugin-dark-mode",
     {
       resolve: `gatsby-source-filesystem`,
       options: {

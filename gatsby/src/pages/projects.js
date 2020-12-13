@@ -19,6 +19,7 @@ export const query = graphql`
     projects: allSanityProject{
       nodes {
         name
+        id
         thumbnail_image {
           asset {
           fixed(width: 200, height: 200){
