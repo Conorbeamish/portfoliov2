@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import wave from "../assets/svg/wave.svg"
+import wavedark from "../assets/svg/wavedark.svg"
 import StarBackground from "../components/StarBackground";
+import WaveBackground from "./WaveBackground";
 import yellowtail from "../assets/fonts/Yellowtail/Yellowtail-Regular.ttf";
 import {Link} from "gatsby";
 
@@ -67,6 +69,13 @@ const IndexStyle = styled.div`
     position: absolute;
     width: 100%;
     bottom: 0; 
+    margin-bottom: -2px;
+  }
+  img:nth-child(4){
+    display: var(--light-display);
+  }
+  img:nth-child(5){
+    display: var(--dark-display);
   }
   .bounce-text{
     cursor: default;
@@ -143,7 +152,7 @@ const Landing = () => {
 
   return(
     <IndexStyle>
-      <StarBackground className="star-background"/>
+      <StarBackground/>
       <section className="landing">
         <div>
           <h2>{word1} {word2} <br/>
@@ -154,6 +163,7 @@ const Landing = () => {
         <p>{after} {dark}</p>
         <Link to="/contact">Contact Now</Link>  
         <img src={wave} alt="Background wave" />
+        <img src={wavedark} alt="Background wave" />
       </section>
     </IndexStyle>
   )

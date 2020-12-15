@@ -42,7 +42,6 @@ export default{
       title: "Description",
       type: "string",
       description: "A short overview of the Project",
-      validation: Rule => Rule.max(100)
     },
     {
       name: "content",

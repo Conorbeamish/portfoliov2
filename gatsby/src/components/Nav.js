@@ -14,6 +14,9 @@ const NavStyle = styled.div`
   a {
     padding: 0.25rem;
     margin-right: 0.25rem;
+    &:hover{
+      border-bottom: 2px solid var(--highlight-blue);
+    }
   }
   nav {
     display: flex;
@@ -23,6 +26,7 @@ const NavStyle = styled.div`
     top: 0;
     width: 100%;
     backdrop-filter: blur(2px);
+    z-index: 100;
   }
   h1{
     margin: 1rem;
