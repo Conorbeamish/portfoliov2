@@ -7,16 +7,15 @@ const ProjectCardStyle = styled(props => <Link {...props} />)`
   grid-template-rows: auto auto 1fr auto;
   grid-row: span 3;
 
-  border: 1px solid var(--dark-blue);
+  border: 1px solid var(--card-border);
   border-radius: 1rem;
   padding: 1rem;
   background-color: var(--dark-blue);
-  box-shadow: 0px 3px 5px 3px rgba(0,0,0,0.5);
+  box-shadow: var(--card-shadow);
   transition: 0.5s;
 
   &:hover{
-    background-color: var(--blue);
-    border: 1px solid var(--blue);
+    background-color: var(--navy-blue);
   }
 
   .technology-container{

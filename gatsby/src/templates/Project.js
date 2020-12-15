@@ -9,11 +9,13 @@ const SingleProjectStyle = styled.div`
   flex-direction: column;
   margin: 5rem auto;
   width: 80%;
-  border: 1px solid var(--dark-blue);
+  
+  border: 1px solid var(--card-border);
   border-radius: 1rem;
   padding: 1rem;
   background-color: var(--dark-blue);
-  box-shadow: 0px 3px 5px 3px rgba(0,0,0,0.5);
+  box-shadow: var(--card-shadow);
+  transition: 0.5s;
 
   @media only screen and (min-width: 768px) {
     width:60%;
