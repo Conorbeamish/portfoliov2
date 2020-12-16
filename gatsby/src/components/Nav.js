@@ -55,9 +55,6 @@ const Nav = () => {
             <Link className="on-page" to="/">About</Link>
           </li>
           <li>
-            <Link className="on-page" to="/skills">Skills</Link>
-          </li>
-          <li>
             <Link className="on-page" to="/projects">Projects</Link>
           </li>
           <li>

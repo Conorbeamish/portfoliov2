@@ -33,7 +33,7 @@ const GlobalStyles = createGlobalStyle`
     ::-webkit-scrollbar-track{
       background-color: transparent;
       margin-top: 4rem;
-      margin-bottom: 4rem;
+      margin-bottom: 0.5rem;
     }
     ::-webkit-scrollbar{
       width: 10px; 
@@ -51,11 +51,11 @@ const GlobalStyles = createGlobalStyle`
     --link-border: var(--black);
     --background-color: var(--white);
     --card-border: var(--dark-blue);
+    --card-border-light: var(--white);
     --card-shadow: 0px 3px 5px 3px rgba(0,0,0,0.5);
 
     //Sets opacity for dark mode items
     --dark-item: 0;
-    
     --dark-display: none;
     --light-display: block;
   }
@@ -68,6 +68,7 @@ const GlobalStyles = createGlobalStyle`
     --background-color: var(--black); 
 
     --card-border: var(--highlight-blue);
+    --card-border-light: var(--highlight-blue);
     --card-shadow: 0px 0px 25px -5px var(--highlight-blue);
     
     //Set opacity for light mode items

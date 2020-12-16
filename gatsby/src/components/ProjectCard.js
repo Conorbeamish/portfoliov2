@@ -9,7 +9,7 @@ const ProjectCardStyle = styled(props => <Link {...props} />)`
 
   border: 1px solid var(--card-border);
   border-radius: 1rem;
-  padding: 1rem;
+  padding: 1.5rem;
   background-color: var(--dark-blue);
   box-shadow: var(--card-shadow);
   transition: 0.5s;
@@ -49,11 +49,11 @@ const ProjectCardStyle = styled(props => <Link {...props} />)`
 const ProjectCard = ({project}) => {
   return (
     //TODO fix link
-      <ProjectCardStyle to={project.slug.current}>
+      <ProjectCardStyle to={`/projects/${project.slug.current}`}>
         <h3>{project.name}</h3>
         <div className="technology-container">
           {project.technology?.map(technology => (
-            <div className="technology-name">{technology.name}</div>
+            <div key={technology.id} className="technology-name">{technology.name}</div>
           ))}
         </div>
         <p>{project.description}</p>

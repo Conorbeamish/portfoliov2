@@ -49,11 +49,11 @@ const StarBackgroundStyle = styled.div`
       from {background-position: 0;}
       to {background-position:10000px 0;}
   }
-  .stars {
+  div:nth-child(1){
     background:#000 url(${stars}) repeat top center;
     z-index:-10;
   }
-  .twinkling{
+  div:nth-child(2){
     background:transparent url(${twinkling}) repeat top center;
     z-index:-9;
     -moz-animation:move-twink-back 200s linear infinite;
@@ -62,7 +62,7 @@ const StarBackgroundStyle = styled.div`
     -webkit-animation:move-twink-back 200s linear infinite;
     animation:move-twink-back 200s linear infinite;
   }
-  .clouds{
+  div:nth-child(3){
     background: transparent url(${clouds}) round top center;
     z-index:-8;
     -moz-animation:move-clouds-back 200s linear infinite;
@@ -77,9 +77,9 @@ const StarBackgroundStyle = styled.div`
 const StarBackground = () => {
   return ( 
     <StarBackgroundStyle>
-      <div className="stars"></div>
-      <div className="twinkling"></div>
-      <div className="clouds"></div>
+      <div></div>
+      <div></div>
+      <div></div>
     </StarBackgroundStyle>
   );
 }

@@ -26,8 +26,34 @@ async function turnProjectsIntoPages({graphql, actions}){
   })
 }
 
+async function turnTechnologyIntoPages({graphql, actions}){
+  const technologyTemplate = path.resolve("./src/pages/projects.js");
+
+  const {data} = await graphql(`
+    query{
+      technology: allSanityTechnology{
+        nodes {
+          name
+          id
+        }
+      }
+    }
+  `);
+  data.technology.nodes.forEach(tech => {
+    actions.createPage({
+      path: `/technology/${tech.name}`,
+      component: technologyTemplate,
+      context: {
+        technology: tech.name,
+        technologyRegex: `/${tech.name}/i`
+      }
+    })
+  })
+}
+
 exports.createPages = async function(params){
   await Promise.all([
-    turnProjectsIntoPages(params)
+    turnProjectsIntoPages(params),
+    turnTechnologyIntoPages(params),
   ]);
 }

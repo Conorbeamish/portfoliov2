@@ -5,14 +5,14 @@ import BlockContent from '@sanity/block-content-to-react';
 import Img from "gatsby-image"
 
 const SingleProjectStyle = styled.div`
+  color: var(--white);
   display: flex;
   flex-direction: column;
   margin: 5rem auto;
   width: 80%;
-  
   border: 1px solid var(--card-border);
   border-radius: 1rem;
-  padding: 1rem;
+  padding: 1.5rem;
   background-color: var(--dark-blue);
   box-shadow: var(--card-shadow);
   transition: 0.5s;
@@ -24,8 +24,12 @@ const SingleProjectStyle = styled.div`
     align-self: flex-end;
     margin: 1rem;
     font-weight: bold;
+    color: var(--white);
     &:hover{
       color: var(--light-grey);
+    }
+    &:visited{
+      color: var(--white);
     }
   }
 `;

@@ -43,6 +43,19 @@ const IndexStyle = styled.div`
         0 0 8rem var(--highlight-blue),
         0 0 10rem var(--highlight-blue);
   }
+  .lights-off{
+    position:absolute;
+    top: 4.75rem;
+    right: 2.5rem;
+    font-family: Yellowtail;
+    color: var(--white);
+    display: var(--light-display);
+    font-size: 1rem;
+    transform: rotate(-10deg);
+  }
+  .lights-off-big{
+    opacity:0;
+  }
   .flicker:nth-child(2){
     animation: flicker 1s infinite alternate; 
   }
@@ -53,15 +66,17 @@ const IndexStyle = styled.div`
     animation: flicker 3s infinite alternate; 
   }
   a{
-    border: 4px solid var(--link-border);
+    
+    border: solid 1px var(--card-border);
+    box-shadow: var(--card-shadow);
     border-radius: 0.25rem;
     padding: 0.5rem 1rem 0.5rem 1rem;
     font-size: 1.5rem;
     cursor: pointer;
     z-index: 2;
     &:hover{
-      color: var(--text-color-opposite);
-      background-color: var(--link-border);
+      color: var(--white);
+      background-color: var(--navy-blue);
       transition: 0.5s;
     }
   }
@@ -71,10 +86,10 @@ const IndexStyle = styled.div`
     bottom: 0; 
     margin-bottom: -2px;
   }
-  img:nth-child(4){
+  img:nth-child(5){
     display: var(--light-display);
   }
-  img:nth-child(5){
+  img:nth-child(6){
     display: var(--dark-display);
   }
   .bounce-text{
@@ -129,6 +144,16 @@ const IndexStyle = styled.div`
       filter:blur(0.000001px);
     }   
   }
+  @media only screen and (min-width: 768px) {
+    .lights-off{
+      font-size:1.25rem;
+      top: 5rem;
+      right: 3rem;
+    }
+    .lights-off-big{
+      opacity:1;
+    }
+  }
 `
 //Takes in a string and a className and returns each letter as a span with that classname
 //TODO fix psudeo unique keys
@@ -159,6 +184,10 @@ const Landing = () => {
             <span className="highlight">C</span>{word3} <span className="highlight">B</span>{word4}<br/>
             {word5} {word6}
           </h2>
+        </div>
+        <div className="lights-off">
+          <span className="lights-off-big">Turn the </span>Lights Off ↗ <br/>
+          <span className="lights-off-big">Trust me it's cool...</span>
         </div>
         <p>{after} {dark}</p>
         <Link to="/contact">Contact Now</Link>  
