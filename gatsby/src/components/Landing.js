@@ -5,9 +5,10 @@ import wavedark from "../assets/svg/wavedark.svg"
 import StarBackground from "../components/StarBackground";
 import WaveBackground from "./WaveBackground";
 import yellowtail from "../assets/fonts/Yellowtail/Yellowtail-Regular.ttf";
-import {Link} from "gatsby";
+// import {Link} from "gatsby";
+import Link from 'gatsby-plugin-transition-link'
 
-const IndexStyle = styled.div`
+const LandingStyle = styled.div`
   @font-face {
     font-family: Yellowtail;
     src: url(${yellowtail});
@@ -19,6 +20,7 @@ const IndexStyle = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position:relative;
   }
   .highlight{
     color: var(--highlight-blue);
@@ -84,7 +86,6 @@ const IndexStyle = styled.div`
     position: absolute;
     width: 100%;
     bottom: 0; 
-    margin-bottom: -2px;
   }
   img:nth-child(5){
     display: var(--light-display);
@@ -176,7 +177,7 @@ const Landing = () => {
   const dark = createSpans("Dark", "flicker");
 
   return(
-    <IndexStyle>
+    <LandingStyle>
       <StarBackground/>
       <section className="landing">
         <div>
@@ -194,7 +195,7 @@ const Landing = () => {
         <img src={wave} alt="Background wave" />
         <img src={wavedark} alt="Background wave" />
       </section>
-    </IndexStyle>
+    </LandingStyle>
   )
 }
 

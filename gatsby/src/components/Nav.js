@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import {Link} from "gatsby";
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 import LightSwitch from './LightSwitch';
 
 const NavStyle = styled.div`
@@ -15,6 +16,9 @@ const NavStyle = styled.div`
     padding: 0.25rem;
     margin-right: 0.25rem;
     &:hover{
+      border-bottom: 2px solid var(--highlight-blue);
+    }
+    &[aria-current="page"]{
       border-bottom: 2px solid var(--highlight-blue);
     }
   }
@@ -33,11 +37,6 @@ const NavStyle = styled.div`
     border-bottom: solid 2px var(--highlight-blue);
     display: none;
   }
-  .on-page{
-    &[aria-current="page"]{
-      border-bottom: 2px solid var(--highlight-blue);
-    }
-  }
   @media only screen and (min-width: 600px) {
     h1{
       display: block;
@@ -52,13 +51,16 @@ const Nav = () => {
         <h1>CB</h1>
         <ul>
           <li>
-            <Link className="on-page" to="/">About</Link>
+            {/* <Link className="on-page" to="/">About</Link> */}
+            <AniLink paintDrip duration={1} color="#00111c" to="/">About</AniLink>
           </li>
           <li>
-            <Link className="on-page" to="/projects">Projects</Link>
+            {/* <Link to="/projects">Projects</Link> */}
+            <AniLink paintDrip duration={1} color="#00111c" to="/projects">Projects</AniLink>
           </li>
           <li>
-            <Link className="on-page" to="/contact">Contact</Link>
+            {/* <Link to="/contact">Contact</Link> */}
+            <AniLink paintDrip duration={1} color="#00111c" to="/contact">Contact</AniLink>
           </li>        
         </ul>
         <LightSwitch />

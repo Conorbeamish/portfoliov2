@@ -25,6 +25,7 @@ module.exports = {
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     "gatsby-plugin-dark-mode",
+    "gatsby-plugin-transition-link",
     {
       resolve: `gatsby-source-filesystem`,
       options: {

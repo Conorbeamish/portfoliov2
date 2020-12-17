@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import {AiFillGithub, AiFillLinkedin, AiOutlineMail} from "react-icons/Ai";
-import { Link } from 'gatsby';
 
 const ContactPageStyles = styled.div`
   width:80%;

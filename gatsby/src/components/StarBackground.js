@@ -13,7 +13,7 @@ const StarBackgroundStyle = styled.div`
     right:0;
     bottom:0;
     width:100%;
-    height:100%;
+    height:100vh;
     display:block;
   }
   @keyframes move-twink-back {

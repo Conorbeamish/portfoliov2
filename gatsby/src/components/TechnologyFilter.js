@@ -1,4 +1,5 @@
-import { graphql, Link, useStaticQuery} from 'gatsby';
+import { graphql, useStaticQuery} from 'gatsby';
+import Link from 'gatsby-plugin-transition-link'
 import Img from "gatsby-image";
 import React from 'react';
 import styled from 'styled-components';

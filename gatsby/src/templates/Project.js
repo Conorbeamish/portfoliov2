@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { graphql, Link } from "gatsby";
+import { graphql,} from "gatsby";
+import Link from 'gatsby-plugin-transition-link'
 import BlockContent from '@sanity/block-content-to-react';
 import Img from "gatsby-image"
 

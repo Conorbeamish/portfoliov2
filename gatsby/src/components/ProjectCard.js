@@ -1,4 +1,5 @@
-import { Link } from 'gatsby';
+// import { Link } from 'gatsby';
+import Link from 'gatsby-plugin-transition-link'
 import React from 'react';
 import styled from 'styled-components';
 
@@ -12,7 +13,6 @@ const ProjectCardStyle = styled(props => <Link {...props} />)`
   padding: 1.5rem;
   background-color: var(--dark-blue);
   box-shadow: var(--card-shadow);
-  transition: 0.5s;
 
   &:hover{
     background-color: var(--navy-blue);
