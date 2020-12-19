@@ -1,9 +1,9 @@
-// import { Link } from 'gatsby';
 import Link from 'gatsby-plugin-transition-link'
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import React from 'react';
 import styled from 'styled-components';
 
-const ProjectCardStyle = styled(props => <Link {...props} />)`
+const ProjectCardStyle = styled(props => <AniLink {...props} />)`
   display: grid;
   grid-template-rows: auto auto 1fr auto;
   grid-row: span 3;
@@ -49,7 +49,13 @@ const ProjectCardStyle = styled(props => <Link {...props} />)`
 const ProjectCard = ({project}) => {
   return (
     //TODO fix link
-      <ProjectCardStyle to={`/projects/${project.slug.current}`}>
+      <ProjectCardStyle 
+        cover
+        direction="up"
+        duration={1}
+        bg="#00111c"
+        to={`/projects/${project.slug.current}`}
+      >
         <h3>{project.name}</h3>
         <div className="technology-container">
           {project.technology?.map(technology => (

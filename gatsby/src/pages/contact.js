@@ -34,15 +34,15 @@ const ContactPage = () => {
         </a>
       </div>
       <form>
-        <label for="name">
+        <label htmlFor="name">
           Name:
           <input type="text" name="name" />
         </label>
-        <label for="email">
+        <label htmlFor="email">
           Email:
           <input type="text" name="name" />
         </label>
-        <label for="message">
+        <label htmlFor="message">
           Message:
           <textarea name="message">
 

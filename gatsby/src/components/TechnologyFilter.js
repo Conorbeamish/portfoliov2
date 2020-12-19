@@ -1,5 +1,5 @@
-import { graphql, useStaticQuery} from 'gatsby';
-import Link from 'gatsby-plugin-transition-link'
+import { graphql, useStaticQuery,Link} from 'gatsby';
+// import Link from 'gatsby-plugin-transition-link'
 import Img from "gatsby-image";
 import React from 'react';
 import styled from 'styled-components';
@@ -10,7 +10,7 @@ const TechnologyStyles = styled.div`
   flex-wrap: wrap;
   gap: 1rem 2rem;
   margin: 2rem 0;
-  a{
+  button{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,12 +21,16 @@ const TechnologyStyles = styled.div`
     padding: 0.25rem 0.5rem;
     background-color: var(--white);
     color: var(--black);
+    cursor: pointer;
     &:hover{
       border: 1px solid var(--highlight-blue);
     }
-    &[aria-current="page"]{
+    &.active-technology{
       border: 1px solid var(--highlight-blue);
       background-color: var(--highlight-blue);
+    }
+    &:focus{
+      outline:none;
     }
   }
   h3{
@@ -35,8 +39,8 @@ const TechnologyStyles = styled.div`
   }
 `
 
-const TechnologyFilter = () => {
-
+const TechnologyFilter = (props) => {
+  const {setProjectFilter, projectFilter} = props
   const {technology} = useStaticQuery(graphql`
     query{
       technology: allSanityTechnology {
@@ -59,14 +63,21 @@ const TechnologyFilter = () => {
   `);
   return (
     <TechnologyStyles>
-      <Link to={`/projects`}>
+      <button 
+        onClick={() => setProjectFilter(false)}
+        className={!projectFilter && "active-technology"}
+      >
         <h3>Show All</h3>
-      </Link>
+      </button>
       {technology.nodes.map(tech => (
-        <Link key={tech.id} to={`/technology/${tech.name}`}>
+        <button 
+          onClick={() => setProjectFilter(tech.name)} 
+          key={tech.id} 
+          className={projectFilter === tech.name? "active-technology" : ""}
+        >
           <h3>{tech.name}</h3>
           <Img fixed={tech.technology_logo.asset.fixed}/>
-        </Link>
+        </button>
       ))}
     </TechnologyStyles>
   );

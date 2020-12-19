@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { graphql,} from "gatsby";
-import Link from 'gatsby-plugin-transition-link'
+import { graphql} from "gatsby";
 import BlockContent from '@sanity/block-content-to-react';
 import Img from "gatsby-image"
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
 
 const SingleProjectStyle = styled.div`
   color: var(--white);
@@ -45,7 +45,15 @@ const SingleProjectPage = ({data: {project}}) => {
         projectId={"ky69fho1"} 
         dataset={"production"}
       />
-      <Link to="/projects">↩ Go Back</Link>
+      <AniLink 
+        to="/projects"
+        cover
+        direction="down"
+        duration={1}
+        bg="#00111c"
+      >
+        ↩ Go Back
+      </AniLink>
     </SingleProjectStyle>
   );
 }

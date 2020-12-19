@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {graphql} from "gatsby";
 import ProjectContainer from '../components/ProjectContainer';
 import TechnologyFilter from "../components/TechnologyFilter";
@@ -13,13 +13,28 @@ const TechnologyContainerStyle = styled.div`
   margin: 0 auto;
 `
 const ProjectsPage = ({data}) => {
-  const projects = data.projects.nodes
+
+  const [projectFilter, setProjectFilter] = useState(false);
+
+  // let projects = data.projects.nodes
+
+  const projects = projectFilter 
+    ? data.projects.nodes.filter(project => project.technology.map(technology => technology.name).indexOf(projectFilter) >= 0) 
+    : data.projects.nodes;
+  
+  console.log(projects)
+
   return ( 
     <ProjectPageStyle>
       <TechnologyContainerStyle>
         <h2>My work</h2>
         <p>Here are some of the technologies I use</p>
-        <TechnologyFilter />
+        <TechnologyFilter projectFilter={projectFilter} setProjectFilter={setProjectFilter}/>
+        {projects.length === 0 && 
+          <p>It seems I'm not currently featuring any projects using this technology, 
+            if you want some examples please get in contact and I will be happy to share them.
+          </p>
+        }
       </TechnologyContainerStyle>
       <ProjectContainer  projects={projects}/>
     </ProjectPageStyle>

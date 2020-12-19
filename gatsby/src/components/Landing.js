@@ -5,8 +5,8 @@ import wavedark from "../assets/svg/wavedark.svg"
 import StarBackground from "../components/StarBackground";
 import WaveBackground from "./WaveBackground";
 import yellowtail from "../assets/fonts/Yellowtail/Yellowtail-Regular.ttf";
-// import {Link} from "gatsby";
-import Link from 'gatsby-plugin-transition-link'
+import {Link} from "gatsby";
+// import Link from 'gatsby-plugin-transition-link'
 
 const LandingStyle = styled.div`
   @font-face {
@@ -86,6 +86,7 @@ const LandingStyle = styled.div`
     position: absolute;
     width: 100%;
     bottom: 0; 
+    transform: translateY(1px)
   }
   img:nth-child(5){
     display: var(--light-display);
