@@ -8,11 +8,11 @@ const PageStyles = styled.div`
 `;
 
 //See ../gatsby-browser.js for wrapping the whole page element with layout component
-const Layout = ({ children }) => {
+const Layout = ({ children, location }) => {
   return (
     <>
       <GlobalStyles />
-      <Nav />
+      <Nav location={location}/>
       <PageStyles>
         {children}
       </PageStyles>

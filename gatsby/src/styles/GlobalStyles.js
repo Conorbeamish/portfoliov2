@@ -45,14 +45,16 @@ const GlobalStyles = createGlobalStyle`
       border-radius: 0.25rem;
     }
 
-    --landing-bg: linear-gradient(145deg,#001099 0,#3ad9ff 96%);
+    --landing-bg: linear-gradient(145deg, #001099 0,#3ad9ff 96%);
     --text-color:  var(--black);
     --text-color-opposite: var(--white);
     --link-border: var(--black);
     --background-color: var(--white);
+    
     --card-border: var(--dark-blue);
     --card-border-light: var(--white);
     --card-shadow: 0px 3px 5px 3px rgba(0,0,0,0.5);
+    --card-background: linear-gradient(to bottom right, var(--blue), var(--navy-blue));
 
     //Sets opacity for dark mode items
     --dark-item: 0;
@@ -70,7 +72,7 @@ const GlobalStyles = createGlobalStyle`
     --card-border: var(--highlight-blue);
     --card-border-light: var(--highlight-blue);
     --card-shadow: 0px 0px 25px -5px var(--highlight-blue);
-    
+    --card-background: var(--dark-blue);
     //Set opacity for light mode items
     --light-item: 0;
 

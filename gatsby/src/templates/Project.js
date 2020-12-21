@@ -14,7 +14,7 @@ const SingleProjectStyle = styled.div`
   border: 1px solid var(--card-border);
   border-radius: 1rem;
   padding: 1.5rem;
-  background-color: var(--dark-blue);
+  background-image: var(--card-background);
   box-shadow: var(--card-shadow);
   transition: 0.5s;
 
@@ -47,10 +47,7 @@ const SingleProjectPage = ({data: {project}}) => {
       />
       <AniLink 
         to="/projects"
-        cover
-        direction="down"
-        duration={1}
-        bg="#00111c"
+        fade
       >
         ↩ Go Back
       </AniLink>

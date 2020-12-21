@@ -43,23 +43,36 @@ const NavStyle = styled.div`
   }
 `;
 
-const Nav = () => {
+const Nav = ({location}) => {
+  const {pathname} = location
+  let middleLink
+
+  //Changes the animation direction depending on location in the application.
+  switch (pathname) {
+    case "/":
+      middleLink = <AniLink cover direction="left" duration={1} bg="#00111c" to="/projects">Projects</AniLink>
+      break;
+    case "/contact":
+      middleLink = <AniLink cover direction="right" duration={1} bg="#00111c" to="/projects">Projects</AniLink>
+      break;
+    default:
+      middleLink = <AniLink  fade to="/projects">Projects</AniLink>
+      break;
+  }
+
   return (  
     <NavStyle>
       <nav>
         <h1>CB</h1>
         <ul>
           <li>
-            {/* <Link className="on-page" to="/">About</Link> */}
-            <AniLink paintDrip duration={1} color="#00111c" to="/">About</AniLink>
+            <AniLink cover direction="right" duration={1} bg="#00111c" to="/">About</AniLink>
           </li>
           <li>
-            {/* <Link to="/projects">Projects</Link> */}
-            <AniLink paintDrip duration={1} color="#00111c" to="/projects">Projects</AniLink>
+            {middleLink}
           </li>
           <li>
-            {/* <Link to="/contact">Contact</Link> */}
-            <AniLink paintDrip duration={1} color="#00111c" to="/contact">Contact</AniLink>
+            <AniLink cover direction="left" duration={1} bg="#00111c" to="/contact">Contact</AniLink>
           </li>        
         </ul>
         <LightSwitch />

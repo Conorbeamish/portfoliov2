@@ -7,6 +7,7 @@ import styled from 'styled-components';
 const ProjectPageStyle = styled.div`
   margin-top: 5rem;
   margin-bottom: 5rem;
+  min-height: 100vh;
 `  
 const TechnologyContainerStyle = styled.div`
   width: 80%;
@@ -21,8 +22,6 @@ const ProjectsPage = ({data}) => {
   const projects = projectFilter 
     ? data.projects.nodes.filter(project => project.technology.map(technology => technology.name).indexOf(projectFilter) >= 0) 
     : data.projects.nodes;
-  
-  console.log(projects)
 
   return ( 
     <ProjectPageStyle>

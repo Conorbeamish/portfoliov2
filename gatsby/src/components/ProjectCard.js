@@ -7,11 +7,10 @@ const ProjectCardStyle = styled(props => <AniLink {...props} />)`
   display: grid;
   grid-template-rows: auto auto 1fr auto;
   grid-row: span 3;
-
   border: 1px solid var(--card-border);
   border-radius: 1rem;
   padding: 1.5rem;
-  background-color: var(--dark-blue);
+  background-image: var(--card-background);
   box-shadow: var(--card-shadow);
 
   &:hover{
@@ -28,7 +27,7 @@ const ProjectCardStyle = styled(props => <AniLink {...props} />)`
     margin-right: 0.5rem;
     font-weight: bold;
     border: 1px solid var(--light-grey);
-    background-color: var(--light-grey);
+    background-image: linear-gradient(to bottom right, var(--highlight-blue), var(--white));
     color: var(--dark-grey);
     border-radius: 0.25rem;
     padding: 0.125rem 0.25rem;
@@ -50,10 +49,7 @@ const ProjectCard = ({project}) => {
   return (
     //TODO fix link
       <ProjectCardStyle 
-        cover
-        direction="up"
-        duration={1}
-        bg="#00111c"
+        fade
         to={`/projects/${project.slug.current}`}
       >
         <h3>{project.name}</h3>

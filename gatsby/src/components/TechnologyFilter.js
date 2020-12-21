@@ -24,10 +24,11 @@ const TechnologyStyles = styled.div`
     cursor: pointer;
     &:hover{
       border: 1px solid var(--highlight-blue);
+      background-image: linear-gradient(to bottom right, var(--highlight-blue), var(--white));
     }
     &.active-technology{
       border: 1px solid var(--highlight-blue);
-      background-color: var(--highlight-blue);
+      background-image: linear-gradient(to bottom right, var(--highlight-blue), var(--white));
     }
     &:focus{
       outline:none;
@@ -65,7 +66,7 @@ const TechnologyFilter = (props) => {
     <TechnologyStyles>
       <button 
         onClick={() => setProjectFilter(false)}
-        className={!projectFilter && "active-technology"}
+        className={!projectFilter ? "active-technology" : undefined}
       >
         <h3>Show All</h3>
       </button>
