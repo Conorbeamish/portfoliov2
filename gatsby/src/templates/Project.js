@@ -21,16 +21,19 @@ const SingleProjectStyle = styled.div`
   @media only screen and (min-width: 768px) {
     width:60%;
   }
+  p{
+    opacity:0.9;
+  }
   a{
     align-self: flex-end;
     margin: 1rem;
     font-weight: bold;
     color: var(--white);
-    &:hover{
-      color: var(--light-grey);
-    }
     &:visited{
       color: var(--white);
+    }
+    &:hover{
+      color: var(--light-grey);
     }
   }
 `;

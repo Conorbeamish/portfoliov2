@@ -5,19 +5,31 @@ import TechnologyFilter from "../components/TechnologyFilter";
 import styled from 'styled-components';
 
 const ProjectPageStyle = styled.div`
-  margin-top: 5rem;
-  margin-bottom: 5rem;
+  margin: 5rem auto;
   min-height: 100vh;
+  width: 80%;
+  h2{
+    border-bottom: solid 2px var(--highlight-blue);
+    width: auto;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+    text-align: center;
+  }
+  @media only screen and (min-width: 768px) {
+    width:60%;
+    
+  }
 `  
 const TechnologyContainerStyle = styled.div`
-  width: 80%;
   margin: 0 auto;
+  p{
+    color: var(--text-color-soft);
+    text-align: center;
+  }
 `
 const ProjectsPage = ({data}) => {
 
   const [projectFilter, setProjectFilter] = useState(false);
-
-  // let projects = data.projects.nodes
 
   const projects = projectFilter 
     ? data.projects.nodes.filter(project => project.technology.map(technology => technology.name).indexOf(projectFilter) >= 0) 

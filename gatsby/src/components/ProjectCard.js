@@ -26,9 +26,8 @@ const ProjectCardStyle = styled(props => <AniLink {...props} />)`
   .technology-name{
     margin-right: 0.5rem;
     font-weight: bold;
-    border: 1px solid var(--light-grey);
     background-image: linear-gradient(to bottom right, var(--highlight-blue), var(--white));
-    color: var(--dark-grey);
+    color: var(--black);
     border-radius: 0.25rem;
     padding: 0.125rem 0.25rem;
   }
@@ -38,9 +37,14 @@ const ProjectCardStyle = styled(props => <AniLink {...props} />)`
   }
   p{
     color: var(--white);
+    opacity: 0.9;
     font-weight: bold;
     &:nth-child(4){
       justify-self: end;
+      color: var(--white);
+      &:hover{
+        color: var(--light-grey)
+      }
     }
   }
 `;

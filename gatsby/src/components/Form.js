@@ -5,12 +5,18 @@ import {AiOutlineLoading} from "react-icons/Ai";
 const FormStyle = styled.form`
   display: flex;
   flex-direction: column;
-  color: var(--white);
+  color: var(--light-grey);
   border: 1px solid var(--card-border);
   border-radius: 1rem;
+  margin: 3rem 0;
   padding: 1.5rem;
   background-image: var(--card-background);
   box-shadow: var(--card-shadow);
+  div{
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
   input, textarea{
     &:focus{
       outline: none;
@@ -18,6 +24,19 @@ const FormStyle = styled.form`
   }
   svg{
     animation:spin 4s linear infinite;
+  }
+  textarea {
+    border-radius: 0.25rem;
+  }
+  input{
+    border-radius: 0.25rem;
+    border: none;
+    
+  }
+  @media only screen and (min-width: 768px) {
+    input{
+      width: 50%;
+    }
   }
   @keyframes spin { 
         from { 
@@ -47,7 +66,7 @@ const Form = () => {
   const handleSubmit = (e) => {
     setFormStatus({...formStatus, error:null, loading:true})
     e.preventDefault()
-    fetch("https://formspree.io/mbjzgbde", {
+    fetch(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -73,20 +92,26 @@ const Form = () => {
 
   return (
     <FormStyle onSubmit={handleSubmit}>
-      <label htmlFor="name">Name:</label>
-      <input type="text" name="name" value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})}/>
-      
-      <label htmlFor="email">Email:</label>
-      <input type="email" name="email" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})}/>
-
-      <label htmlFor="name">Subject:</label>
-      <input type="text" name="subject" value={formData.subject} onChange={(e) => setFormData({...formData, subject: e.target.value})}/>
-
-      <label htmlFor="message">Message:</label>
-      <textarea name="message" value={formData.message} onChange={(e) => setFormData({...formData, message: e.target.value})}></textarea>
-
-      {formStatus.loading? <AiOutlineLoading /> : submit}
-      {formStatus.error? <p>{formStatus}</p>: <p></p>}
+      <div>
+        <label htmlFor="name">Name:</label>
+        <input type="text" name="name" value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})}/>
+      </div>
+      <div>
+        <label htmlFor="email">Email:</label>
+        <input type="email" name="email" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})}/>
+      </div>
+      <div>
+        <label htmlFor="name">Subject:</label>
+        <input type="text" name="subject" value={formData.subject} onChange={(e) => setFormData({...formData, subject: e.target.value})}/>
+      </div>
+      <div>
+        <label htmlFor="message">Message:</label>
+        <textarea name="message" rows="10" value={formData.message} onChange={(e) => setFormData({...formData, message: e.target.value})}></textarea>
+      </div>
+      <div>
+        {formStatus.loading? <AiOutlineLoading /> : submit}
+        {formStatus.error? <p>{formStatus.error}</p>: <p></p>}
+      </div>
     </FormStyle>
   );
 }

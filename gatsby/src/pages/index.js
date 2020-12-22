@@ -1,20 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
+import About from '../components/About';
 import Landing from '../components/Landing';
 
 const IndexStyle = styled.div`
-  section{
-    height: 100vh;
-  }
+
 `
 
 const IndexPage = () => {
   return ( 
     <IndexStyle>
       <Landing />
-      <section>
-
-      </section>
+      <About />
     </IndexStyle>
   );
 }

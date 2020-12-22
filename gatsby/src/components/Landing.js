@@ -5,15 +5,14 @@ import wavedark from "../assets/svg/wavedark.svg";
 import StarBackground from "../components/StarBackground";
 import WaveBackground from "./WaveBackground";
 import yellowtail from "../assets/fonts/Yellowtail/Yellowtail-Regular.ttf";
-import {Link} from "gatsby";
-// import Link from 'gatsby-plugin-transition-link'
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 
 const LandingStyle = styled.div`
   @font-face {
     font-family: Yellowtail;
     src: url(${yellowtail});
   }
-  .landing {
+  section {
     min-height: 100vh;
     background: var(--landing-bg);
     display: flex;
@@ -21,6 +20,7 @@ const LandingStyle = styled.div`
     justify-content: center;
     align-items: center;
     position:relative;
+    overflow: hidden;
   }
   .highlight{
     color: var(--highlight-blue);
@@ -85,8 +85,7 @@ const LandingStyle = styled.div`
   img {
     position: absolute;
     width: 100%;
-    bottom: 0; 
-    transform: translateY(1px)
+    bottom: -1px; 
   }
   img:nth-child(5){
     display: var(--light-display);
@@ -180,7 +179,7 @@ const Landing = () => {
   return(
     <LandingStyle>
       <StarBackground/>
-      <section className="landing">
+      <section>
         <div>
           <h2>{word1} {word2} <br/>
             <span className="highlight">C</span>{word3} <span className="highlight">B</span>{word4}<br/>
@@ -192,7 +191,7 @@ const Landing = () => {
           <span className="lights-off-big">Trust me it's cool...</span>
         </div>
         <p>{after} {dark}</p>
-        <Link to="/contact">Contact Now</Link>  
+        <AniLink cover direction="left" duration={1} bg="#00111c" to="/contact">Contact Now</AniLink>  
         <img src={wave} alt="Background wave" />
         <img src={wavedark} alt="Background wave" />
       </section>

@@ -15,12 +15,11 @@ const GlobalStyles = createGlobalStyle`
   :root {
     --black: #00111c;
     --white: #F3F4F5;
-    --dark-grey: #2e2e2e;
+    --dark-grey: #696969;
     --light-grey: #a9a9a9;
     --highlight-blue: #43b7ff;
     --blue: #005a91;
     --navy-blue: #001d2f;
-    --dark-blue: #00111c;
   }
 
   body{
@@ -47,6 +46,7 @@ const GlobalStyles = createGlobalStyle`
 
     --landing-bg: linear-gradient(145deg, #001099 0,#3ad9ff 96%);
     --text-color:  var(--black);
+    --text-color-soft: var(--dark-grey);
     --text-color-opposite: var(--white);
     --link-border: var(--black);
     --background-color: var(--white);
@@ -64,6 +64,7 @@ const GlobalStyles = createGlobalStyle`
   body.dark {
     --landing-bg: rgba(0,0,0,0);
     --text-color: var(--white);
+    --text-color-soft: var(--light-grey);
     --text-color-opposite:  var(--black);
     --dark-item: 1;
     --link-border: var(--highlight-blue);
@@ -72,7 +73,7 @@ const GlobalStyles = createGlobalStyle`
     --card-border: var(--highlight-blue);
     --card-border-light: var(--highlight-blue);
     --card-shadow: 0px 0px 25px -5px var(--highlight-blue);
-    --card-background: var(--dark-blue);
+    --card-background: var(--black);
     //Set opacity for light mode items
     --light-item: 0;
 
