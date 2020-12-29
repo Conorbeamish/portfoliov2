@@ -45,8 +45,7 @@ const ContactPage = () => {
   return ( 
     <ContactPageStyles>
       <h2>Get in touch</h2>
-      <Form />
-      <P>You can also find me on...</P>
+      <P>You can find me on...</P>
       <IconContainer>
         <a>
           <AiFillGithub/>
@@ -58,6 +57,8 @@ const ContactPage = () => {
           <AiOutlineMail/>
         </a>
       </IconContainer>
+      <P>Or fill out the form below and I will get back to you...</P>
+      <Form />
     </ContactPageStyles>
   );
 }

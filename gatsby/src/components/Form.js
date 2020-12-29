@@ -18,10 +18,12 @@ const FormStyle = styled.form`
     flex-direction: column;
   }
   input, textarea{
+    color: var(--text-color);
     letter-spacing: 0.075rem;
-    border: 2px solid var(--white);
+    border: 2px solid var(--input-border);
     border-radius: 0.25rem;
     padding: 0.5rem 2rem;
+    background-color: var(--background-color);
     &:focus{
       outline: none;
       border: 2px solid var(--highlight-blue);
@@ -35,6 +37,9 @@ const FormStyle = styled.form`
     background: none;
     color: var(--white);
     font-weight: bold;
+    width: 50%;
+    margin: 0 auto;
+    border: 2px solid var(--white);
     cursor: pointer;
     &:hover{
       border: 2px solid var(--highlight-blue);
@@ -61,6 +66,9 @@ const FormStyle = styled.form`
     textarea, input{
       width: 50%;
       margin: 0 auto;
+    }
+    input[type="submit"]{
+      width: 25%;
     }
   }
   @keyframes spin { 
