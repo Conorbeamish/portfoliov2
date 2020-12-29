@@ -17,16 +17,17 @@ const ContactPageStyles = styled.div`
     padding-bottom: 0.5rem;
     display: inline-block;
   }
-  p{
-    color: var(--text-color-soft);
-    text-align: center;
-  }
 `;
 
+const P = styled.p`
+  color: var(--text-color-soft);
+  text-align: center;
+`
+
 const IconContainer = styled.div`
-display: flex;
-justify-content: space-evenly;
-margin: 2rem 0;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 2rem 0;
   svg{
     height: 2rem;
     width: 2rem;
@@ -37,7 +38,6 @@ margin: 2rem 0;
   }
   a{
     cursor: pointer;
-    }
   }
 `;
 
@@ -46,7 +46,7 @@ const ContactPage = () => {
     <ContactPageStyles>
       <h2>Get in touch</h2>
       <Form />
-      <p>You can also find me on...</p>
+      <P>You can also find me on...</P>
       <IconContainer>
         <a>
           <AiFillGithub/>

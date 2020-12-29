@@ -16,7 +16,7 @@ const Layout = ({ children, location }) => {
       <PageStyles>
         {children}
       </PageStyles>
-      <Footer />
+      <Footer location={location}/>
     </>
   )
 }

@@ -39,7 +39,7 @@ const ProjectsPage = ({data}) => {
     <ProjectPageStyle>
       <TechnologyContainerStyle>
         <h2>My work</h2>
-        <p>Here are some of the technologies I use</p>
+        <p>Here are some of the technologies I use and the projects I have used them in</p>
         <TechnologyFilter projectFilter={projectFilter} setProjectFilter={setProjectFilter}/>
         {projects.length === 0 && 
           <p>It seems I'm not currently featuring any projects using this technology, 

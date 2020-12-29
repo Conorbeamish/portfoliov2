@@ -3,6 +3,9 @@ import styled from 'styled-components';
 import fullstack from "../assets/svg/fullstack.svg";
 import modern from "../assets/svg/modern.svg";
 import responsive from "../assets/svg/responsive.svg";
+import mountains from "../assets/svg/mountains.svg";
+import travel from "../assets/svg/travel.svg";
+import university from "../assets/svg/university.svg";
 
 const AboutStyle = styled.section`
   width:80%;
@@ -59,6 +62,24 @@ const About = () => {
         </div>
       </IconContainer>
       <h2>Get to know me</h2>
+      <p>Aliquam vel quam eget ex accumsan fringilla. Etiam viverra, leo aliquet bibendum accumsan, magna lacus cursus dolor, a vehicula dolor arcu at ligula. Nullam egestas, mi laoreet tincidunt fermentum, ex purus rutrum quam, eget fringilla augue velit ut dui. Donec suscipit condimentum quam sed scelerisque. Vivamus consectetur fermentum diam, ac malesuada quam eleifend vel. Sed egestas mauris ex, vitae lacinia eros consequat et.</p>
+      <IconContainer>
+        <div>
+          <img src={university} alt="university"/>
+          <h3>University</h3>
+          <p>I make......</p>
+        </div>
+        <div>
+          <img src={travel} alt="travel" />
+          <h3>Working Abroad</h3>
+          <p>I program.....</p>
+        </div>
+        <div>
+          <img src={mountains} alt="mountains" />
+          <h3>My free time</h3>
+          <p>I use.......</p>
+        </div>
+      </IconContainer>
     </AboutStyle>
   );
 }

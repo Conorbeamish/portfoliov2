@@ -3,7 +3,6 @@ import styled from "styled-components";
 import wave from "../assets/svg/wave.svg";
 import wavedark from "../assets/svg/wavedark.svg";
 import StarBackground from "../components/StarBackground";
-import WaveBackground from "./WaveBackground";
 import yellowtail from "../assets/fonts/Yellowtail/Yellowtail-Regular.ttf";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
 
@@ -45,19 +44,6 @@ const LandingStyle = styled.div`
         0 0 8rem var(--highlight-blue),
         0 0 10rem var(--highlight-blue);
   }
-  .lights-off{
-    position:absolute;
-    top: 4.75rem;
-    right: 2.5rem;
-    font-family: Yellowtail;
-    color: var(--white);
-    display: var(--light-display);
-    font-size: 1rem;
-    transform: rotate(-10deg);
-  }
-  .lights-off-big{
-    opacity:0;
-  }
   .flicker:nth-child(2){
     animation: flicker 1s infinite alternate; 
   }
@@ -68,7 +54,6 @@ const LandingStyle = styled.div`
     animation: flicker 3s infinite alternate; 
   }
   a{
-    
     border: solid 1px var(--card-border);
     box-shadow: var(--card-shadow);
     border-radius: 0.25rem;
@@ -79,7 +64,7 @@ const LandingStyle = styled.div`
     &:hover{
       color: var(--white);
       background-color: var(--navy-blue);
-      transition: 0.5s;
+      transition: 0.25s;
     }
   }
   img {
@@ -109,27 +94,21 @@ const LandingStyle = styled.div`
     from {
       transform: scale3d(1, 1, 1);
     }
-
     30% {
       transform: scale3d(1.25, 0.75, 1);
     }
-
     40% {
       transform: scale3d(0.75, 1.25, 1);
     }
-
     50% {
       transform: scale3d(1.15, 0.85, 1);
     }
-
     65% {
       transform: scale3d(.95, 1.05, 1);
     }
-
     75% {
       transform: scale3d(1.05, .95, 1);
     }
-
     to {
       transform: scale3d(1, 1, 1);
     }
@@ -145,13 +124,25 @@ const LandingStyle = styled.div`
       filter:blur(0.000001px);
     }   
   }
+`;
+
+const LightsOffStyle= styled.div`
+  position:absolute;
+  top: 4.75rem;
+  right: 2.5rem;
+  font-family: Yellowtail;
+  color: var(--white);
+  display: var(--light-display);
+  font-size: 1rem;
+  transform: rotate(-10deg);
+  span{
+    opacity:0;
+  }
   @media only screen and (min-width: 768px) {
-    .lights-off{
-      font-size:1.25rem;
-      top: 5rem;
-      right: 3rem;
-    }
-    .lights-off-big{
+    font-size:1.25rem;
+    top: 5rem;
+    right: 3rem;
+    span{
       opacity:1;
     }
   }
@@ -173,8 +164,8 @@ const Landing = () => {
   const word5 = createSpans("Web", "bounce-text");
   const word6 = createSpans("Developer", "bounce-text");
 
-  const after = createSpans("After", "flicker");
-  const dark = createSpans("Dark", "flicker");
+  const after = createSpans("Dark", "flicker");
+  const dark = createSpans("Mode", "flicker");
 
   return(
     <LandingStyle>
@@ -186,10 +177,10 @@ const Landing = () => {
             {word5} {word6}
           </h2>
         </div>
-        <div className="lights-off">
-          <span className="lights-off-big">Turn the </span>Lights Off ↗ <br/>
-          <span className="lights-off-big">Trust me it's cool...</span>
-        </div>
+        <LightsOffStyle>
+          <span >Turn the </span>Lights Off ↗ <br/>
+          <span >Trust me it's cool...</span>
+        </LightsOffStyle>
         <p>{after} {dark}</p>
         <AniLink cover direction="left" duration={1} bg="#00111c" to="/contact">Contact Now</AniLink>  
         <img src={wave} alt="Background wave" />
