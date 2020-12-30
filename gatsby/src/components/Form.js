@@ -26,7 +26,7 @@ const FormStyle = styled.form`
     background-color: var(--background-color);
     &:focus{
       outline: none;
-      border: 2px solid var(--highlight-blue);
+      border: 2px solid var(--input-highlight);
     }
     font-family: Lato;
   }

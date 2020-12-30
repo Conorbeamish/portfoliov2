@@ -7,7 +7,7 @@ import styled from 'styled-components';
 const ProjectPageStyle = styled.div`
   margin: 5rem auto;
   min-height: 100vh;
-  width: 80%;
+ 
   h2{
     border-bottom: solid 2px var(--highlight-blue);
     width: auto;
@@ -15,16 +15,16 @@ const ProjectPageStyle = styled.div`
     padding-bottom: 0.5rem;
     text-align: center;
   }
-  @media only screen and (min-width: 768px) {
-    width:60%;
-    
-  }
 `  
 const TechnologyContainerStyle = styled.div`
   margin: 0 auto;
+  width: 80%;
   p{
     color: var(--text-color-soft);
     text-align: center;
+  }
+  @media only screen and (min-width: 768px) {
+    width:60%; 
   }
 `
 const ProjectsPage = ({data}) => {

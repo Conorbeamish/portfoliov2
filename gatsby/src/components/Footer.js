@@ -11,6 +11,7 @@ const FooterStyles = styled.footer`
   position: relative;
   background-color: var(--navy-blue);
   img {
+    z-index: 1;
     position: absolute;
     width: 100%;
     top: -1px;
@@ -25,7 +26,8 @@ const FooterStyles = styled.footer`
   }
 `
 const FooterContentStyle = styled.div`
-  z-index: 2;
+  position: relative;
+  z-index: 10;
   padding-top: 5rem;
   padding-bottom: 2rem;
   display: flex;

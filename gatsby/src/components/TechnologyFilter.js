@@ -8,13 +8,16 @@ import BackgroundImage from 'gatsby-background-image';
 const TechnologyStyles = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem 2rem;
+  flex-direction: column;
+  gap: 1rem 1rem;
   margin: 2rem 0;
   button{
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0 1rem;
+    width: 50%;
+    margin: 0 auto;
     border: 1px solid var(--card-border-light);
     box-shadow: var(--card-shadow);
     border-radius: 1rem;
@@ -22,6 +25,9 @@ const TechnologyStyles = styled.div`
     background-color: var(--white);
     color: var(--black);
     cursor: pointer;
+    @media only screen and (min-width: 768px) {
+      width: auto;
+  }
     &:hover{
       border: 1px solid var(--highlight-blue);
       background-image: linear-gradient(to bottom right, var(--highlight-blue), var(--white));
@@ -37,6 +43,9 @@ const TechnologyStyles = styled.div`
   h3{
     margin: 0;
     font-size: 1rem;
+  }
+  @media only screen and (min-width: 768px) {
+      flex-direction: row;
   }
 `
 

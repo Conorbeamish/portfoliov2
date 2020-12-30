@@ -51,7 +51,7 @@ const GlobalStyles = createGlobalStyle`
     --link-border: var(--black);
     --background-color: var(--white);
     --input-border: transparent;
-    
+    --input-highlight: var(--highlight-blue);
     --card-border: var(--dark-blue);
     --card-border-light: var(--white);
     --card-shadow: 0px 3px 5px 3px rgba(0,0,0,0.5);
@@ -71,6 +71,7 @@ const GlobalStyles = createGlobalStyle`
     --link-border: var(--highlight-blue);
     --background-color: var(--black); 
     --input-border: var(--highlight-blue);
+    --input-highlight: var(--white);
     --card-border: var(--highlight-blue);
     --card-border-light: var(--highlight-blue);
     --card-shadow: 0px 0px 25px -5px var(--highlight-blue);

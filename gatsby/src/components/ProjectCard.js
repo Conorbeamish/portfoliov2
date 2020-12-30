@@ -16,21 +16,6 @@ const ProjectCardStyle = styled(props => <AniLink {...props} />)`
   &:hover{
     background-color: var(--navy-blue);
   }
-
-  .technology-container{
-    display: flex;
-    flex: row;
-    margin: 1rem 0;
-    
-  }
-  .technology-name{
-    margin-right: 0.5rem;
-    font-weight: bold;
-    background-image: linear-gradient(to bottom right, var(--highlight-blue), var(--white));
-    color: var(--black);
-    border-radius: 0.25rem;
-    padding: 0.125rem 0.25rem;
-  }
   h3 {
     margin: 0;
     color: var(--white);
@@ -49,6 +34,20 @@ const ProjectCardStyle = styled(props => <AniLink {...props} />)`
   }
 `;
 
+const TechnologyContainerStyle = styled.div`
+  display: flex;
+  flex: row;
+  flex-wrap: wrap;
+  div{
+    margin: 1rem 0.5rem 0 0;
+    font-weight: bold;
+    background-image: linear-gradient(to bottom right, var(--highlight-blue), var(--white));
+    color: var(--black);
+    border-radius: 0.25rem;
+    padding: 0.125rem 0.25rem;
+  }
+`;
+
 const ProjectCard = ({project}) => {
   return (
     //TODO fix link
@@ -57,11 +56,11 @@ const ProjectCard = ({project}) => {
         to={`/projects/${project.slug.current}`}
       >
         <h3>{project.name}</h3>
-        <div className="technology-container">
+        <TechnologyContainerStyle>
           {project.technology?.map(technology => (
-            <div key={technology.id} className="technology-name">{technology.name}</div>
+            <div key={technology.id}>{technology.name}</div>
           ))}
-        </div>
+        </TechnologyContainerStyle>
         <p>{project.description}</p>
         <p>More info ↪</p>
       </ProjectCardStyle>
