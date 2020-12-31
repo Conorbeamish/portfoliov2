@@ -18,12 +18,12 @@ const ProjectPageStyle = styled.div`
 `  
 const TechnologyContainerStyle = styled.div`
   margin: 0 auto;
-  width: 80%;
+  width: 90%;
   p{
     color: var(--text-color-soft);
     text-align: center;
   }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 769px) {
     width:60%; 
   }
 `
@@ -70,6 +70,16 @@ export const query = graphql`
         technology{
           id
           name
+          technology_logo {
+            asset {
+              fixed(width: 30, height: 30){
+                ...GatsbySanityImageFixed
+              }
+              fluid(maxWidth: 50, maxHeight: 50){
+                ...GatsbySanityImageFluid
+              }
+            }
+          }
         }
         thumbnail_image {
           asset {

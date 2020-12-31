@@ -25,18 +25,24 @@ const SingleProjectStyle = styled.div`
     opacity:0.9;
   }
   a{
-    align-self: flex-end;
-    margin: 1rem;
-    font-weight: bold;
-    color: var(--white);
-    &:visited{
-      color: var(--white);
-    }
     &:hover{
       color: var(--light-grey);
     }
   }
 `;
+
+const LinkStyle = styled(AniLink)`
+  align-self: flex-end;
+  margin: 1rem;
+  font-weight: bold;
+  color: var(--white);
+  &:visited{
+    color: var(--white);
+  }
+  &:hover{
+    color: var(--light-grey);
+  }
+`
 
 const SingleProjectPage = ({data: {project}}) => {
   return (
@@ -48,12 +54,12 @@ const SingleProjectPage = ({data: {project}}) => {
         projectId={"ky69fho1"} 
         dataset={"production"}
       />
-      <AniLink 
+      <LinkStyle 
         to="/projects"
         fade
       >
         ↩ Go Back
-      </AniLink>
+      </LinkStyle>
     </SingleProjectStyle>
   );
 }

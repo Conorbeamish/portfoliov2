@@ -2,6 +2,7 @@ import Link from 'gatsby-plugin-transition-link'
 import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import React from 'react';
 import styled from 'styled-components';
+import Img from "gatsby-image";
 
 const ProjectCardStyle = styled(props => <AniLink {...props} />)`
   display: grid;
@@ -17,7 +18,9 @@ const ProjectCardStyle = styled(props => <AniLink {...props} />)`
     background-color: var(--navy-blue);
   }
   h3 {
-    margin: 0;
+    margin: 0 auto 0 0;
+    padding-bottom: 0.25rem;
+    border-bottom: 2px solid var(--highlight-blue);
     color: var(--white);
   }
   p{
@@ -38,14 +41,11 @@ const TechnologyContainerStyle = styled.div`
   display: flex;
   flex: row;
   flex-wrap: wrap;
-  div{
-    margin: 1rem 0.5rem 0 0;
-    font-weight: bold;
-    background-image: linear-gradient(to bottom right, var(--highlight-blue), var(--white));
-    color: var(--black);
-    border-radius: 0.25rem;
-    padding: 0.125rem 0.25rem;
-  }
+  gap: 0.5rem;
+  color: var(--light-grey);
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.75rem;
 `;
 
 const ProjectCard = ({project}) => {
@@ -58,7 +58,10 @@ const ProjectCard = ({project}) => {
         <h3>{project.name}</h3>
         <TechnologyContainerStyle>
           {project.technology?.map(technology => (
-            <div key={technology.id}>{technology.name}</div>
+            <div key={technology.id}>
+              <Img fixed={technology.technology_logo.asset.fixed}/>
+              <div>{technology.name}</div>
+            </div>
           ))}
         </TechnologyContainerStyle>
         <p>{project.description}</p>

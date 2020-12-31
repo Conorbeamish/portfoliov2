@@ -6,17 +6,16 @@ import styled from 'styled-components';
 import BackgroundImage from 'gatsby-background-image';
 
 const TechnologyStyles = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 1rem 1rem;
   margin: 2rem 0;
   button{
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
     gap: 0 1rem;
-    width: 50%;
     margin: 0 auto;
     border: 1px solid var(--card-border-light);
     box-shadow: var(--card-shadow);
@@ -25,9 +24,6 @@ const TechnologyStyles = styled.div`
     background-color: var(--white);
     color: var(--black);
     cursor: pointer;
-    @media only screen and (min-width: 768px) {
-      width: auto;
-  }
     &:hover{
       border: 1px solid var(--highlight-blue);
       background-image: linear-gradient(to bottom right, var(--highlight-blue), var(--white));
@@ -44,8 +40,8 @@ const TechnologyStyles = styled.div`
     margin: 0;
     font-size: 1rem;
   }
-  @media only screen and (min-width: 768px) {
-      flex-direction: row;
+  @media only screen and (min-width: 769px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 `
 
@@ -77,7 +73,7 @@ const TechnologyFilter = (props) => {
         onClick={() => setProjectFilter(false)}
         className={!projectFilter ? "active-technology" : undefined}
       >
-        <h3>Show All</h3>
+        <h3>All</h3>
       </button>
       {technology.nodes.map(tech => (
         <button 
