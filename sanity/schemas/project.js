@@ -12,6 +12,12 @@ export default{
       validation: Rule => Rule.required()
     },
     {
+      name:"display_order",
+      title: "Display Order",
+      type: "number",
+      description: "Order to display ascending"
+    },
+    {
       name: "slug",
       title: "Slug",
       type: "slug",

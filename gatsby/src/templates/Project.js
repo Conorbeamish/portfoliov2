@@ -21,6 +21,11 @@ const SingleProjectStyle = styled.div`
   @media only screen and (min-width: 768px) {
     width:60%;
   }
+  h2{
+    margin: 1rem auto 1rem 0;
+    padding-bottom: 0.25rem;
+    border-bottom: 2px solid var(--highlight-blue);
+  }
   p{
     opacity:0.9;
   }
@@ -43,12 +48,25 @@ const LinkStyle = styled(AniLink)`
     color: var(--light-grey);
   }
 `
+const LinkContainer = styled.div`
+  margin: 2rem auto 1rem auto;
+  a{
+    margin: 0 1rem;
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border: 2px solid var(--highlight-blue);
+  }
+`
 
 const SingleProjectPage = ({data: {project}}) => {
   return (
     <SingleProjectStyle>
       <h2>{project.name}</h2>
       <Img fluid={project.project_image.asset.fluid} />
+      <LinkContainer>
+        {project.code && <a target="_blank" rel="noopener noreferrer" href={`${project.code}`}>View Code</a>}
+        {project.site && <a target="_blank" rel="noopener noreferrer" href={`${project.site}`}>View Site</a>}
+      </LinkContainer>
       <BlockContent 
         blocks={project._rawContent} 
         projectId={"ky69fho1"} 
@@ -72,6 +90,8 @@ export const query = graphql`
       _rawContent
       name
       id
+      code
+      site
       technology {
         name
       }

@@ -18,7 +18,7 @@ const ProjectCardStyle = styled(props => <AniLink {...props} />)`
     background-color: var(--navy-blue);
   }
   h3 {
-    margin: 0 auto 0 0;
+    margin: 0 auto 0  0;
     padding-bottom: 0.25rem;
     border-bottom: 2px solid var(--highlight-blue);
     color: var(--white);
@@ -45,7 +45,9 @@ const TechnologyContainerStyle = styled.div`
   color: var(--light-grey);
   text-align: center;
   margin-top: 1rem;
+  margin-bottom: 1rem;
   font-size: 0.75rem;
+  justify-content: center;
 `;
 
 const ProjectCard = ({project}) => {
@@ -64,6 +66,7 @@ const ProjectCard = ({project}) => {
             </div>
           ))}
         </TechnologyContainerStyle>
+        <Img fluid={project.project_image?.asset.fluid}/>
         <p>{project.description}</p>
         <p>More info ↪</p>
       </ProjectCardStyle>

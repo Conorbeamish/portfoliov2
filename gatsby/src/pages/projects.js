@@ -54,17 +54,24 @@ const ProjectsPage = ({data}) => {
 
 export const query = graphql`
   query projectsQuery($technology: [String]){
-    projects: allSanityProject(filter: {
-      technology: {
-        elemMatch: {
-          name: {
-            in: $technology
+    projects: allSanityProject(
+      filter: {
+        technology: {
+          elemMatch: {
+            name: {
+              in: $technology
+            }
           }
         }
       }
-    }){
+      sort: {
+        fields: display_order,
+        order: ASC
+      }
+      ){
       nodes {
         name
+        display_order
         id
         description
         technology{
@@ -81,15 +88,12 @@ export const query = graphql`
             }
           }
         }
-        thumbnail_image {
+        project_image {
           asset {
-            fixed(width: 200, height: 200){
-              ...GatsbySanityImageFixed
-            }
-            fluid(maxWidth: 200, maxHeight: 200){
+            fluid(maxWidth: 800){
               ...GatsbySanityImageFluid
             }
-          }
+            }
         }
         slug {
           current
