@@ -27,7 +27,7 @@ const ProjectCardStyle = styled(props => <AniLink {...props} />)`
     color: var(--white);
     opacity: 0.9;
     font-weight: bold;
-    &:nth-child(4){
+    &:nth-child(5){
       justify-self: end;
       color: var(--white);
       &:hover{

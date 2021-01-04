@@ -30,6 +30,7 @@ const SingleProjectStyle = styled.div`
     opacity:0.9;
   }
   a{
+    color: var(--white);
     &:hover{
       color: var(--light-grey);
     }
@@ -51,6 +52,7 @@ const LinkStyle = styled(AniLink)`
 const LinkContainer = styled.div`
   margin: 2rem auto 1rem auto;
   a{
+    color: var(--white);
     margin: 0 1rem;
     border-radius: 0.25rem;
     padding: 0.5rem 1rem 0.5rem 1rem;

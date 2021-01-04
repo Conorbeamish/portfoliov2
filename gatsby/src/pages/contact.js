@@ -47,13 +47,13 @@ const ContactPage = () => {
       <h2>Get in touch</h2>
       <P>You can find me on...</P>
       <IconContainer>
-        <a>
+        <a href="https://github.com/Conorbeamish/" target="_blank" rel="noopener noreferrer">
           <AiFillGithub/>
         </a>
-        <a>
+        <a href="https://www.linkedin.com/in/conor-beamish-81b512192/" target="_blank" rel="noopener noreferrer">
           <AiFillLinkedin/>
         </a>
-        <a>
+        <a href="mailto:conorbeamish@hotmail.co.uk">
           <AiOutlineMail/>
         </a>
       </IconContainer>
