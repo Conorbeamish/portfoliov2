@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import {AiOutlineLoading} from "react-icons/Ai";
+import {AiOutlineLoading} from "react-icons/ai";
 
 const FormStyle = styled.form`
   display: flex;

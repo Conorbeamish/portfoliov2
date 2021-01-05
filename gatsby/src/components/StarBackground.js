@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import clouds from "../assets/images/clouds.png";
 import stars from "../assets/images/stars.png";
 import twinkling from "../assets/images/twinkling.png";
-import aurora from "../assets/images/aurora.png";
 
 const StarBackgroundStyle = styled.div`
   div{

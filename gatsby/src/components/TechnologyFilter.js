@@ -1,9 +1,7 @@
 import { graphql, useStaticQuery} from 'gatsby';
-import Link from 'gatsby-plugin-transition-link'
 import Img from "gatsby-image";
 import React from 'react';
 import styled from 'styled-components';
-import BackgroundImage from 'gatsby-background-image';
 
 const TechnologyStyles = styled.div`
   display: grid;
