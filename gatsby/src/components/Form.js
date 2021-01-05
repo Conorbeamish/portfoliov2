@@ -127,19 +127,19 @@ const Form = () => {
     <FormStyle onSubmit={handleSubmit}>
       <div>
         <label htmlFor="name">What's your Name?</label>
-        <input type="text" name="name" placeholder="🙋" required value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})}/>
+        <input type="text" name="name"autoComplete="off" placeholder="🙋" required value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})}/>
       </div>
       <div>
         <label htmlFor="email">What's your Email?</label>
-        <input type="email" name="email" placeholder="📧" required value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})}/>
+        <input type="email" name="email" autoComplete="off" placeholder="📧" required value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})}/>
       </div>
       <div>
         <label htmlFor="name">Whats the topic?</label>
-        <input type="text" name="subject" placeholder="📃" required value={formData.subject} onChange={(e) => setFormData({...formData, subject: e.target.value})}/>
+        <input type="text" name="subject" autoComplete="off" placeholder="📃" required value={formData.subject} onChange={(e) => setFormData({...formData, subject: e.target.value})}/>
       </div>
       <div>
         <label htmlFor="message">Let's talk!</label>
-        <textarea name="message" rows="10" placeholder="Hello!" required value={formData.message} onChange={(e) => setFormData({...formData, message: e.target.value})}></textarea>
+        <textarea name="message" rows="10" autoComplete="off" placeholder="Hello!" required value={formData.message} onChange={(e) => setFormData({...formData, message: e.target.value})}></textarea>
       </div>
       <div>
         {formStatus.loading? <AiOutlineLoading /> : submit}

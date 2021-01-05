@@ -18,14 +18,15 @@ const LightSwitch = () => {
       {({ theme, toggleTheme }) => {
           return (
             <LightSwitchStyle>
-              {theme === "light" ? 
+              {theme === "light" &&
                 <BsMoon
                   onClick={() => {
                     const nextTheme = theme === 'light' ? 'dark' : 'light'
                     toggleTheme(nextTheme)
                   }}
                 />
-              : 
+              }
+              {theme === "dark" &&  
                 <BsSun
                   onClick={() => {
                     const nextTheme = theme === 'light' ? 'dark' : 'light'
