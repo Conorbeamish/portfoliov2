@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import {AiFillGithub, AiFillLinkedin, AiOutlineMail} from "react-icons/Ai";
 import Form from '../components/Form';
+import SEO from '../components/SEO';
 
 const ContactPageStyles = styled.div`
   width:80%;
@@ -43,23 +44,26 @@ const IconContainer = styled.div`
 
 const ContactPage = () => {
   return ( 
-    <ContactPageStyles>
-      <h2>Get in touch</h2>
-      <P>You can find me on...</P>
-      <IconContainer>
-        <a href="https://github.com/Conorbeamish/" target="_blank" rel="noopener noreferrer">
-          <AiFillGithub/>
-        </a>
-        <a href="https://www.linkedin.com/in/conor-beamish-81b512192/" target="_blank" rel="noopener noreferrer">
-          <AiFillLinkedin/>
-        </a>
-        <a href="mailto:conorbeamish@hotmail.co.uk">
-          <AiOutlineMail/>
-        </a>
-      </IconContainer>
-      <P>Or fill out the form below and I will get back to you...</P>
-      <Form />
-    </ContactPageStyles>
+    <>
+      <SEO title="Contact" />
+      <ContactPageStyles>
+        <h2>Get in touch</h2>
+        <P>You can find me on...</P>
+        <IconContainer>
+          <a href="https://github.com/Conorbeamish/" target="_blank" rel="noopener noreferrer">
+            <AiFillGithub/>
+          </a>
+          <a href="https://www.linkedin.com/in/conor-beamish-81b512192/" target="_blank" rel="noopener noreferrer">
+            <AiFillLinkedin/>
+          </a>
+          <a href="mailto:conorbeamish@hotmail.co.uk">
+            <AiOutlineMail/>
+          </a>
+        </IconContainer>
+        <P>Or fill out the form below and I will get back to you...</P>
+        <Form />
+      </ContactPageStyles>
+    </>
   );
 }
  

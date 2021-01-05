@@ -7,7 +7,7 @@ module.exports = {
   siteMetadata: {
     title: `Conor Beamish Portfolio`,
     author: `Conor Beamish`,
-    description: "Conor Beamish's Portfolio"
+    description: "A portfolio of my work as a web developer who uses React, HTML, CSS and Javascript to make custom web sites"
   },
   plugins: [
     {

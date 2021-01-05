@@ -3,6 +3,7 @@ import {graphql} from "gatsby";
 import ProjectContainer from '../components/ProjectContainer';
 import TechnologyFilter from "../components/TechnologyFilter";
 import styled from 'styled-components';
+import SEO from '../components/SEO';
 
 const ProjectPageStyle = styled.div`
   margin: 5rem auto;
@@ -36,19 +37,22 @@ const ProjectsPage = ({data}) => {
     : data.projects.nodes;
 
   return ( 
-    <ProjectPageStyle>
-      <TechnologyContainerStyle>
-        <h2>My work</h2>
-        <p>Here are some of the technologies I use and the projects I have used them in</p>
-        <TechnologyFilter projectFilter={projectFilter} setProjectFilter={setProjectFilter}/>
-        {projects.length === 0 && 
-          <p>It seems I'm not currently featuring any projects using this technology, 
-            if you want some examples please get in contact and I will be happy to share them.
-          </p>
-        }
-      </TechnologyContainerStyle>
-      <ProjectContainer  projects={projects}/>
-    </ProjectPageStyle>
+    <>
+      <SEO title="Projects" />
+      <ProjectPageStyle>
+        <TechnologyContainerStyle>
+          <h2>My work</h2>
+          <p>Here are some of the technologies I use and the projects I have used them in</p>
+          <TechnologyFilter projectFilter={projectFilter} setProjectFilter={setProjectFilter}/>
+          {projects.length === 0 && 
+            <p>It seems I'm not currently featuring any projects using this technology, 
+              if you want some examples please get in contact and I will be happy to share them.
+            </p>
+          }
+        </TechnologyContainerStyle>
+        <ProjectContainer  projects={projects}/>
+      </ProjectPageStyle>
+    </>
    );
 }
 

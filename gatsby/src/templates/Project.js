@@ -4,6 +4,7 @@ import { graphql} from "gatsby";
 import BlockContent from '@sanity/block-content-to-react';
 import Img from "gatsby-image"
 import AniLink from 'gatsby-plugin-transition-link/AniLink';
+import SEO from '../components/SEO';
 
 const SingleProjectStyle = styled.div`
   color: var(--white);
@@ -62,25 +63,28 @@ const LinkContainer = styled.div`
 
 const SingleProjectPage = ({data: {project}}) => {
   return (
-    <SingleProjectStyle>
-      <h2>{project.name}</h2>
-      <Img fluid={project.project_image.asset.fluid} />
-      <LinkContainer>
-        {project.code && <a target="_blank" rel="noopener noreferrer" href={`${project.code}`}>View Code</a>}
-        {project.site && <a target="_blank" rel="noopener noreferrer" href={`${project.site}`}>View Site</a>}
-      </LinkContainer>
-      <BlockContent 
-        blocks={project._rawContent} 
-        projectId={"ky69fho1"} 
-        dataset={"production"}
-      />
-      <LinkStyle 
-        to="/projects"
-        fade
-      >
-        ↩ Go Back
-      </LinkStyle>
-    </SingleProjectStyle>
+    <>
+      <SEO title={project.name} image={project.project_image?.asset?.fluid} />
+      <SingleProjectStyle>
+        <h2>{project.name}</h2>
+        <Img fluid={project.project_image.asset.fluid} />
+        <LinkContainer>
+          {project.code && <a target="_blank" rel="noopener noreferrer" href={`${project.code}`}>View Code</a>}
+          {project.site && <a target="_blank" rel="noopener noreferrer" href={`${project.site}`}>View Site</a>}
+        </LinkContainer>
+        <BlockContent 
+          blocks={project._rawContent} 
+          projectId={"ky69fho1"} 
+          dataset={"production"}
+        />
+        <LinkStyle 
+          to="/projects"
+          fade
+        >
+          ↩ Go Back
+        </LinkStyle>
+      </SingleProjectStyle>
+    </>
   );
 }
 
