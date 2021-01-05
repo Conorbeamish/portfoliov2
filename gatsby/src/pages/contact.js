@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {AiFillGithub, AiFillLinkedin, AiOutlineMail} from "react-icons/Ai";
+import {AiFillGithub, AiFillLinkedin, AiOutlineMail} from "react-icons/ai";
 import Form from '../components/Form';
 import SEO from '../components/SEO';
 

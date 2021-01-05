@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import wave from "../assets/svg/wave.svg";
 import wavedark from "../assets/svg/wavedark.svg";
-import {AiFillGithub, AiFillLinkedin, AiOutlineMail} from "react-icons/Ai";
+import {AiFillGithub, AiFillLinkedin, AiOutlineMail} from "react-icons/ai";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
 
 const FooterStyles = styled.footer`
