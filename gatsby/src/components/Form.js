@@ -45,6 +45,9 @@ const FormStyle = styled.form`
       border: 2px solid var(--highlight-blue);
     }
   }
+  #marmiteJar{
+    display: none;
+  }
   label{
     color: var(--white);
     text-align: center;
@@ -72,12 +75,12 @@ const FormStyle = styled.form`
     }
   }
   @keyframes spin { 
-        from { 
-            transform: rotate(0deg); 
-        } to { 
-            transform: rotate(360deg); 
-        }
+    from { 
+        transform: rotate(0deg); 
+    } to { 
+        transform: rotate(360deg); 
     }
+  }
 `
 const Form = () => {
 
@@ -86,6 +89,7 @@ const Form = () => {
     email:"",
     message:"",
     subject:"",
+    marmiteJar: ""
   });
 
   const [formStatus, setFormStatus] = useState({
@@ -99,26 +103,30 @@ const Form = () => {
   const handleSubmit = (e) => {
     setFormStatus({...formStatus, error:null, loading:true})
     e.preventDefault()
-    fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify(formData),
-    })
-    .then((res) => {
-      if ((res.status >= 400 && res.status < 600)) {
-        throw Error("An error has ocurred please refresh the page and try again");
-      } else {
-        setFormStatus({...formStatus, loading: false, complete: true})
-        return res.json();
-      }
-    })
-    .catch((err) => {
-      console.log(err);
-      setFormStatus({...formStatus, error:err.message, loading: false})
-    })
+    //Check honeypot
+    formData.marmiteJar ? 
+      setFormStatus({...formStatus, error: "You have failed the captcha Error:900, please email me directly"}) 
+      :
+      fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
+      .then((res) => {
+        if ((res.status >= 400 && res.status < 600)) {
+          throw Error("An error has ocurred please refresh the page and try again");
+        } else {
+          setFormStatus({...formStatus, loading: false, complete: true, error:null})
+          return res.json();
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+        setFormStatus({...formStatus, error:err.message, loading: false})
+      })
   }
 
   const submit = formStatus.complete? <p>Thank you your form has been submitted!</p> : <input type="submit"/>
@@ -140,6 +148,9 @@ const Form = () => {
       <div>
         <label htmlFor="message">Let's talk!</label>
         <textarea name="message" rows="10" autoComplete="off" placeholder="Hello!" required value={formData.message} onChange={(e) => setFormData({...formData, message: e.target.value})}></textarea>
+      </div>
+      <div>
+        <input type="text" name="marmiteJar" id="marmiteJar" autoComplete="off" value={formData.marmiteJar} onChange={(e) => setFormData({...formData, marmiteJar: e.target.value})}/>
       </div>
       <div>
         {formStatus.loading? <AiOutlineLoading /> : submit}
