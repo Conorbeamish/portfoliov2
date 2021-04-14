@@ -14,7 +14,8 @@ const ProjectCardStyle = styled(props => <AniLink {...props} />)`
   box-shadow: var(--card-shadow);
 
   &:hover{
-    background-color: var(--navy-blue);
+    transform: translateY(-1rem);
+    transition-duration: 0.25s;
   }
   h3 {
     margin: 0 auto 0  0;
