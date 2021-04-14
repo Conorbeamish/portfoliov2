@@ -44,7 +44,7 @@ const GlobalStyles = createGlobalStyle`
       border-radius: 0.25rem;
     }
 
-    --landing-bg: linear-gradient(145deg, #001099 0,#3ad9ff 96%);
+    --landing-bg: linear-gradient(145deg, #001bff 0,#3ad9ff 96%);
     --text-color:  var(--black);
     --text-color-soft: var(--dark-grey);
     --text-color-opposite: var(--white);
