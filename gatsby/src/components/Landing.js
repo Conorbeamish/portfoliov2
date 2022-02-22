@@ -179,7 +179,6 @@ const Landing = () => {
         </div>
         <LightsOffStyle>
           <span >Turn the </span>Lights Off ↗ <br/>
-          <span >Trust me it's cool...</span>
         </LightsOffStyle>
         <p>{after} {dark}</p>
         <AniLink cover direction="left" duration={1} bg="#00111c" to="/contact">Contact Now</AniLink>  
